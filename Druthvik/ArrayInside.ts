@@ -26,15 +26,3 @@
 //     this.orderdate = orderdate
 //   }
 // }
-const profiles = [
-  { userId: 1, firstName: 'Danielle', lastName: 'Contreras' },
-  { userId: 2, firstName: 'Alfredas', lastName: 'Fehér' },
-  { userId: 3, firstName: 'Orpheus', lastName: 'De Jong' },
-]
-
-// Transform the profiles into an object keyed by the userId:
-const  = profiles.reduce((next, profile) => {
-  const { userId } = profile
-  return { ...next, [userId]: profile }
-}, {})
-console.log(profilesByUserId)
