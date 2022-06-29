@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Druthvik7/Microservice/issues"
   },
-  "homepage": "https://github.com/Druthvik7/Microservice#readme"
+  "homepage": "https://github.com/Druthvik7/Microservice#readme",
+  "devDependencies": {
+    "@types/node": "^18.0.0"
+  }
 }
