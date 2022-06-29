@@ -1,9 +1,0 @@
-Name: John
-Age: 18
-Address: Washington
-
-Name: Doe
-Age: 23
-
-Name: Randy
-Address: Tennessee
