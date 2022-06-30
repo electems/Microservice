@@ -2,7 +2,7 @@ import * as fs from 'fs'
 import { join } from 'path'
 
 export class TrafficVoilationManagement {
-  static fs: any
+
   loadVoilations(inputFile: string): string[] {
     const data = fs.readFileSync(join(__dirname, inputFile), 'utf-8')
     const textByLine = data.toString().split('\n')
