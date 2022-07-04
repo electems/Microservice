@@ -25,11 +25,21 @@ export class RankAllotment {
         }
         rankArray.push(rank)
     }
+      var tempArray
+      for(var i=0;i<rankArray.length;i++){
+        for(var j=i;i<rankArray.length;j++){
+          if (rankArray[i] < rankArray[j]) {
+           tempArray = rankArray[i];
+            rankArray[i] = rankArray[j];
+            rankArray[j] = tempArray;
+          }
+      }
   }
+}
 
   printAndReturnCalculatedRank(student: Student[], rank: number){
       for(let i = 0; i<rank;i++){                                //still have to do
-            
+          
       }
   }
 }
