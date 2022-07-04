@@ -39,7 +39,7 @@ export class RankAllotment {
 
   printAndReturnCalculatedRank(student: Student[], rank: number){
       for(let i = 0; i<rank;i++){                                //still have to do return and print
-          
+          return rank
       }
   }
 }
