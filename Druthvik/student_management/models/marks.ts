@@ -1,15 +1,6 @@
-import { Column, Entity, OneToOne } from "typeorm";
 
-
-
-
-@Entity()
-export class Marks{
-    @Column()
+export class Mark{
     scoredmarks!: number
-
-    @Column()
     maxmarks!: number
-    subject: any;
 
 }
