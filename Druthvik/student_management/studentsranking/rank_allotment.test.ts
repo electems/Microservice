@@ -107,6 +107,7 @@ describe('calculate average of students', () => {
         ]
           const rankAllotment = new RankAllotment(student)
           const sortByAvg = rankAllotment.sortByAverage
+          expect(sortByAvg).toContain(67.5)
         
     })
 
