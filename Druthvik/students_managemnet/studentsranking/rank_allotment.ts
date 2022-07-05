@@ -28,10 +28,9 @@ constructor(studentsList: Student[]) {
      console.log(studentSort)
     }
 
-    displayByAverage(Student[]: []): Student[] {
-    
-    }
+   // displayByAverage(sorted[]: []): []{
         
-}
-     
+   // }
+
+}      
 
