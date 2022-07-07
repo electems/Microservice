@@ -7,17 +7,12 @@ export class ArrangingChocolate {
     this.chocolateList = chocolateList;
   }
 
-  //getting amount of user
-  allotedRupees(Rupees: number): number {
-    return Rupees;
-  }
-
   //getting qunatities of chooclate by dividing the amount of chocolate by alloted rupees
   getMaxQuantityChocolate(Rupees: number) {
     let chocolateAmount = 0;
-    for (const Chocolate of this.chocolateList) {
-      chocolateAmount = Chocolate.amount;
-      Chocolate.quantity = Rupees / chocolateAmount;
+    for (const chocolate of this.chocolateList) {
+      chocolateAmount = chocolate.amount;
+      chocolate.quantity = Rupees / chocolateAmount;
     }
   }
   //sorting chocolates by higher amount of quantity to lower amount of quantity
@@ -25,6 +20,7 @@ export class ArrangingChocolate {
     return this.chocolateList.sort(this.sortChocolate);
   }
   //sort method for quantity
+  //bubblesort
   sortChocolate(a: Chocolates, b: Chocolates) {
     if (a.quantity < b.quantity) {
       return 1;

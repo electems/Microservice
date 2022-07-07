@@ -1,13 +1,6 @@
 import { ArrangingChocolate } from './chocolate_lists';
 import { Chocolates } from '../model/chocolate';
 
-describe('get amount', () => {
-  test('alloted amount', async () => {
-    const getChocolate = new ArrangingChocolate([]);
-    const getRupees = getChocolate.allotedRupees(100);
-    expect(getRupees).toBe(100);
-  });
-});
 const chocolate: Chocolates[] = [
   { name: 'dairymilk', amount: 10, quantity: 10 },
   { name: '5-star', amount: 5, quantity: 20 },
