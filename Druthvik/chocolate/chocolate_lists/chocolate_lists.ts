@@ -1,5 +1,6 @@
 import { Chocolates } from '../model/chocolate';
 
+
 export class ArrangingChocolate {
   chocolateList: Chocolates[] = [];
 
@@ -8,11 +9,11 @@ export class ArrangingChocolate {
   }
 
   //getting qunatities of chooclate by dividing the amount of chocolate by alloted rupees
-  getMaxQuantityChocolate(Rupees: number) {
+    getMaxQuantityChocolate(Rupees: number) {
     let chocolateAmount = 0;
     for (const chocolate of this.chocolateList) {
       chocolateAmount = chocolate.amount;
-      chocolate.quantity = Rupees / chocolateAmount;
+       chocolate.quantity = Rupees / chocolateAmount;
     }
   }
   //sorting chocolates by higher amount of quantity to lower amount of quantity
@@ -31,3 +32,4 @@ export class ArrangingChocolate {
     return 0;
   }
 }
+export default ArrangingChocolate
