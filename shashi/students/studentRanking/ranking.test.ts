@@ -1,3 +1,4 @@
+
 import { students } from "../models/student";
 import{StudentRank} from"../studentRanking/ranking";
 const student: students[] = [
