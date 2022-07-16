@@ -1,4 +1,3 @@
-
 import { students } from "../models/student";
 import{StudentRank} from"../studentRanking/ranking";
 const student: students[] = [
@@ -29,6 +28,7 @@ const student: students[] = [
         },
       },
     ],
+  
   },
 
   {
@@ -58,13 +58,17 @@ const student: students[] = [
         },
       },
     ],
+
   },
 ];
-
+describe('calculate average of students', () => {
+  test('students with different subject', async () => {
 const ranking = new StudentRank(student);
 ranking.AvgMarksCalculation();
 expect(student[0].Avg_marks).toBe(50);
 expect(student[1].Avg_marks).toBe(74);
+})
+})
 
 describe('sorting of students', () => {
   test('sorting students by Avg_marks', async () => {
