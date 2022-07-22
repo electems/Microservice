@@ -22,16 +22,18 @@ export class StudentRank {
     return this.studentlist.sort(this.sortStudents)
   }
   
+  sortStudents(a:students , b: students)  {
+    if (a.Avg_marks < b.Avg_marks) {
+       return 1;
+    }
+    if (a.Avg_marks > b.Avg_marks) {
+       return -1;
+    }
+    return 0;
+  }
+  
+}
 
-sortStudents(a:students , b: students)  {
-  if (a.Avg_marks < b.Avg_marks) {
-     return 1;
-  }
-  if (a.Avg_marks > b.Avg_marks) {
-     return -1;
-  }
-  return 0;
-}
-}
+
 
 
