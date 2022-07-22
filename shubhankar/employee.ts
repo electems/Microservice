@@ -17,5 +17,6 @@ export class Employee{
         )
     
     }
+    
 }
 let companyName: string='raghawa enterprisessc'
