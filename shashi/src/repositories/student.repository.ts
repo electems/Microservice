@@ -26,7 +26,6 @@ public createStudent  = async (payload: IStudentPayload) :Promise<Student> => {
 
 //Working code for the get student using repository.
 
-
 // public getStudent  = async (id: number) :Promise<Student | null> => {
 //   const studentRepository = getRepository(Student);
 //   const student = await studentRepository.findOne({id: id})
@@ -34,9 +33,8 @@ public createStudent  = async (payload: IStudentPayload) :Promise<Student> => {
 //   return student
 // }
 
+
 //Working code for the get student ORM Query builders.
-
-
 // public getStudent(id: number){
 //     console. log("student id is ", id);
 //     const entityManager = getManager();
@@ -51,8 +49,6 @@ public createStudent  = async (payload: IStudentPayload) :Promise<Student> => {
   
 
 //working code to get all the subjects of one student oneToMany relation 
-
-
   public getStudent(id: number){
     const entityManager = getManager();
     const stud = entityManager.createQueryBuilder(Student,'student')
@@ -61,8 +57,8 @@ public createStudent  = async (payload: IStudentPayload) :Promise<Student> => {
     return stud;
   }
 
-//Find all students whose are associated with subject using query builder
 
+//Find all students whose are associated with subject using query builder
   public getStudents =  async() : Promise<Array<Student>> =>{
     let studentList=[];
     const entityManager = getManager();
@@ -71,8 +67,6 @@ public createStudent  = async (payload: IStudentPayload) :Promise<Student> => {
     return studentList;
     
   }
-
-
 }
 
 
