@@ -1,5 +1,5 @@
 var people = [
-    { name: 'raju', age: 34, height: 6.3 },
+    { name: 'raju', age: 24, height: 6.3 },
     { name: 'ramesh', age: 24, height: 5.5 },
     { name: 'ram', age: 19, height: 4.5 },
     { name: 'manju', age: 15, height: 7.6 },
@@ -7,6 +7,7 @@ var people = [
 ];
 var find = people.find(function (newe) {
     if (newe.age > 25) {
+        console.log(newe.name);
         return newe.name;
     }
 });
