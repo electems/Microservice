@@ -7,12 +7,12 @@ public class NullPointerException {
 	}
 
 	// This method caught NullPointerException
-	static void nullPointerException() {
+	static  void nullPointerException() {
 		Student student = new Student();
 		if (student.getName().equals("harsha")) {
-			System.out.println("Names not ");
+			System.out.println("Names are matching");
 		} else {
-			System.out.println("Not Same Name");
+			System.out.println("Names are not matching");
 		}
 	}
 
@@ -21,11 +21,12 @@ public class NullPointerException {
 		Student student = new Student();
 		try {
 			if (student.getName() != null && student.getName().equals("harsha")) {
-				System.out.println("Same Name");
+				System.out.println("Names are matching");
 			} else {
-				System.out.println("Not Same Name");
+				System.out.println("Names are not matching");
 			}
 		} catch (Exception e) {
+			System.out.println("Exception is handled");
 			e.printStackTrace();
 		}
 	}

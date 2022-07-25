@@ -1,9 +1,9 @@
 package com;
 
 public class Student {
-	int id;
-	String name;
-	int age;
+	private int id;
+	private String name;
+	private int age;
 
 	public int getId() {
 		return id;

@@ -7,20 +7,20 @@ class FileOperationServiceTest {
 
 	@Test
 	void createAndWriteFile() {
-	  FileOperationService fileOperation = new FileOperationService();
-	  File myfile = new File("E:\\Harsha\\harsha.txt");
-	  fileOperation.createAndWriteFile(myfile);
+		FileOperationService fileOperation = new FileOperationService();
+		File myfile = new File("E:\\Harsha\\harsha.txt");
+		fileOperation.createAndWriteFile(myfile);
 	}
 
 	@Test
 	void appendContent() {
-	  FileOperationService fileOperation = new FileOperationService();
-	  fileOperation.appendContent();
+		FileOperationService fileOperation = new FileOperationService();
+		fileOperation.appendContent();
 	}
 
 	@Test
 	void replaceWord() {
-	  FileOperationService fileOperation = new FileOperationService();
-	  fileOperation.replaceWord(); 
+		FileOperationService fileOperation = new FileOperationService();
+		fileOperation.replaceWord();
 	}
 }

@@ -5,7 +5,6 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class FileNotFoundException {
-
 	// FileNotFoundException handled in this method
 	static void fileNotFoundExceptionHandled() {
 		// creating an instance of the FileReader class
