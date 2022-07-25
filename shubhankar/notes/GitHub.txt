@@ -1,0 +1,32 @@
+shubhankar54
+shubhankar@electems.com  : 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
+
+
+
+
+
+Steps to generate the access token:
+
+ 
+
+1) log in to the GitHub.
+2)Open the Profile and click on settings.
+3)Click on Developers Setting(Bottom of left-hand side).
+4)Clock on the Personal access token (Bottom of left-hand side).
+5)click on the Generate the Access token.
+6)enter the GitHub password.
+6)Give the note name and Select the durability of the access(Select as No Expire).
+7)and select all the access.
+8)Click on generate a token.
+9)Note: Once the token will generate please save the token in the proper place.
+
+july 21,2022
+
+i have to read about date, files and string operation
+
+reference links:-
+
+date-
+https://bobbyhadz.com/blog/typescript-date-format
+
+https://www.w3schools.blog/date-object-typescript 

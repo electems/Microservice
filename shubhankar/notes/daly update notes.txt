@@ -1,0 +1,78 @@
+shubhankar54
+shubhankar@electems.com  : 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
+
+
+
+
+
+Steps to generate the access token:
+
+ 
+
+1) log in to the GitHub.
+2)Open the Profile and click on settings.
+3)Click on Developers Setting(Bottom of left-hand side).
+4)Clock on the Personal access token (Bottom of left-hand side).
+5)click on the Generate the Access token.
+6)enter the GitHub password.
+6)Give the note name and Select the durability of the access(Select as No Expire).
+7)and select all the access.
+8)Click on generate a token.
+9)Note: Once the token will generate please save the token in the proper place.
+
+july 21,2022
+
+i have to read about date, files and string operation
+
+reference links:-
+
+date-
+https://bobbyhadz.com/blog/typescript-date-format
+
+https://www.w3schools.blog/date-object-typescript 
+
+todays task is to build traffic voilation records and get all output date wise
+
+ 
+c.l(date.tolocalstring());
+[  a : b : c].join(':')
+[  a-b-c].join('-')
+
+month starts from 0 index , so add +1
+join date and time through concatination
+padd is used to give no of digits 'starting digit'
+
+file:- Read and write a text file in typescript
+https://stackoverflow.com/questions/33643107/read-and-write-a-text-file-in-typescript
+
+https://syntaxfix.com/question/4317/read-and-write-a-text-file-in-typescript
+
+fs-file system module allows you to work with the file system on your computer
+The fs.readFileSync() method is an inbuilt application programming interface of fs module which is used to read the file and return its content. 
+syntax:---- fs.readFileSync( path, options )
+
+ path.join() method is used to join a number of path-segments using the platform-specific delimiter to form a single path.
+ The final path is normalized after the joining takes place.
+
+string:-
+
+charAt - return the character at specified index ,index starts from 0 and length from 1.
+
+slice -Returns a section of a string.
+
+@param start — The index to the beginning of the specified portion of stringObj.(it also count space)
+
+@param end
+The index to the end of the specified portion of stringObj. 
+
+split -split a string into substring using specified seperator
+like- appleis good for the health
+var splited =str.split('' ,4) = ['a','p','p','l'] 
+var splitted1 =str.split('' ,4) = [ 'appleis', 'good', 'for','the']
+var splitted2 = str.split(' ',4) = [ 'appleis', 'good', 'for','the']
+
+tostring()- return a string representing a string
+
+search ->     str1.search(str2)  == -1  then found else not
+
+asin = arc sin (value range -1to1)

@@ -1,0 +1,16 @@
+function adding(a: number, b: number): any { 
+    return a + b; 
+} 
+
+var summ: number = adding(10, 15) 
+
+console.log('Sum of the two numbers is: ' +sum); 
+
+==> node first.js
+
+
+to run the code====>
+Step 1: First, run the typescript file with the following command. This will create a javascript file from typescript automatically with the same name.
+tsc helloWorld.ts
+Step 2:Now run the javascript file, the greet.ts file will get executed:
+node helloWorld.js
