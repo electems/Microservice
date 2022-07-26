@@ -1,19 +1,18 @@
-import{Workers} from "./map1"
-import {Mapoperation} from "./map2"
+import { Workers } from './map1';
+import { ReduceOp } from './reduce1';
 
 const MapMethod:Workers[]=[
-    { id: 20, name: 'Ajay', salary:30000 },  
-   { id: 24, name: 'Vijay', salary:35000 },  
-   { id: 56, name: 'Rahul', salary:32000 },  
-   { id: 88, name: 'Raman', salary:38000 }
+    {"id":1,"name":"Munna","salary"},
+    {"name":"Munni","age":20},
+    {"name":"Toni", "age":30},
+    {"name":"maruthi","age":40},
+    {"name":"arnoraj","age":50} 
 ]
 
-describe('to get Map records', () => {
-    test('Workers Salary ', async () => {
-        expect(MapMethod[0].salary).toBe([30000]);
-        expect(MapMethod[1].salary).toBe([35000]);
-        expect(MapMethod[2].salary).toBe([32000]);
-        expect(MapMethod[3].salary).toBe([38000]);
-    
+describe('to get filter records', () => {
+    test('Employee with different age', async () => {
+        expect(filterMethod[2].name).toBe("Toni");
+        expect(filterMethod[3].name).toBe("maruthi");
+        expect(filterMethod[4].name).toBe("arnoraj");
       });
 })
