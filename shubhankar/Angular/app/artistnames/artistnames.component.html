@@ -1,0 +1,12 @@
+<p>artistnames works!</p>
+<h2>
+    This is the location list of Top African Music Artists
+</h2>
+<div *ngIf="artists.length > 0 ">
+<ul *ngFor="let artist of artists">
+    <li>
+        Our number {{artist.grade}} artist in Africa is from {{artist.name}}
+    </li>
+    
+</ul>
+</div>
