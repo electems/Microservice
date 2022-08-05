@@ -1,31 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SHASH</title>
-</head>
-<body>
-  <form>
-    <h1>ENTER YOUR DETAILS</h1>
-    <label for="fname">FIRST NAME:</label>
-    <br><input type="text"><br>
-    <label for="lname">LAST NAME:</label>
-    <br> <input type="text"><br>
-  <h2>SELECT YOUR GENDER</h2>
-    <input type="radio" id="male" name="gender" value="HTML">
-    <label for="html">MALE</label><br>
-    <input type="radio" id="female" name="gender" value="CSS">
-    <label for="css">FEMAL</label><br>
-    <input type="radio" id="others" name="gender" value="JavaScript">
-    <label for="javascript">OTHERS</label>
-  </form><br>
-  <h2>ADDRESS</h2>
-  <form action="https://www.w3schools.com/tags/tag_title.asp">
-    <label for="address">ADDRESS:</label><br>
-    <textarea name="comment" form="usrform">Enter text here...</textarea><br>
-    <br><input type="submit" value="Submit">
-  </form>
-</body>
-</html>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mt-4">
+      <h1 class="text-center">User </h1>
+      <div class="filter-wrap">
+        <input [(ngModel)]="searchTerm" placeholder="Filter Games" class="filter-input">
+      </div>
+      <table class="table table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+            <th class="text-center">ID</th>
+            <th class="text-center">First Name</th>
+            <th class="text-center">Last Name</th>
+            <th class="text-center">Address</th>
+            <th class="text-center">State</th>
+            <th class="text-center">&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of filterUser" class="clickable">
+            <td>{{ user.id }}</td>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.address }}</td>
+            <td>{{ user.state }}</td>
+            <td>
+              <button type="button" class="btn btn-info btn-sm mr-2" (click)="showEditUserForm(user)">Edit</button>
+
+              <button type="button" class="btn btn-danger btn-sm" (click)="removeUser(user)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-success" (click)="showAddUserForm()">Add New User</button>
+      <div class="mt-4">
+        <form *ngIf="userForm" #registerForm="ngForm"(ngSubmit)="registerForm.form.valid && onSubmit()" novalidate>
+          <h2>Add New User</h2>
+          <!-- <p>First Name: <input type="text" name="firstName" [(ngModel)]="newUser.firstName" /></p> -->
+          <div class=" form-group">
+            <label>firstname:</label>
+            <input type="text" [(ngModel)]="newUser.firstname" name="name"
+                #name="ngModel" required><br>
+            <span class="text-danger"
+                *ngIf="(name.touched || registerForm.submitted) && name.errors?.required">
+                firstname is required
+            </span>
+        </div>
+          <!-- <p>Last Name: <input type="text" name="lastName" [(ngModel)]="newUser.lastName" /></p> -->
+          <div class=" form-group">
+            <label>lastName:</label>
+            <input type="text" [(ngModel)]="newUser.lastname" name="name"
+                #name="ngModel" required><br>
+            <span class="text-danger"
+                *ngIf="(name.touched || registerForm.submitted) && name.errors?.required">
+                lastname is required
+            </span>
+        </div>
+          <p>Address: <textarea  type="text" name="address" [(ngModel)]="newUser.address"></textarea></p>
+          <p>State:<select name="state" [(ngModel)]="newUser.state" >
+              <option>choose state</option>
+              <option *ngFor="let state of State" [value]="state.name">{{state.name}}</option>
+              </select></p>
+          	
+              <div class="form-group">
+                <button type="submit" class="btn btn-success">submit</button>
+            </div>
+            <p>
+            <button type="button" class="btn btn-warning" (click)="cancelNewUser()">Cancel</button>
+          </p>
+        </form>
+
+        <form *ngIf="editUserForm">
+          <h2>Edit User Details</h2>
+          <p>First Name: <input type="text" name="firstName" [(ngModel)]="editedUser.firstName" /></p>
+          <p>Last Name: <input type="text" name="lastName" [(ngModel)]="editedUser.lastName" /></p>
+          <p>Address: <
+            <textarea name="address" [(ngModel)]="editedUser.address"></textarea>  /></p>
+          <p>State: <select name="state" [(ngModel)]="editedUser.state" >
+            <option>choose state</option>
+            <option *ngFor="let state of State" [value]="state.name">{{state.name}}</option>
+            </select></p>
+          <p>
+            <button type="button" class="btn btn-primary mr-2" (click)="updateUser()">Submit</button>
+            <button type="button" class="btn btn-warning" (click)="cancelEdits()">Cancel</button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
