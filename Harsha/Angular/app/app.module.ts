@@ -1,24 +1,18 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';    
-import { AppRoutingModule } from './app-routing.module';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { ArtistsComponent } from './artists/artists.component';
-import { ArtistnamesComponent } from './artistnames/artistnames.component';
-import { DataService } from './data.service'
+import { CustomFormsModule } from 'ng2-validation';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArtistsComponent,
-    ArtistnamesComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule
+    BrowserModule, FormsModule,
+    CustomFormsModule
   ],
-  providers: [DataService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
