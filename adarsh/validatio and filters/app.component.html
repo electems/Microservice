@@ -1,0 +1,298 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mt-4">
+      <h1 class="text-center">User List</h1>
+      <div class="filter-wrap">
+        <input
+          [(ngModel)]="searchTerm"
+          placeholder="Filter Games"
+          class="filter-input"
+        />
+      </div>
+      <table class="table table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+            <th class="text-center">ID</th>
+            <th class="text-center">First Name</th>
+            <th class="text-center">Last Name</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Adress</th>
+            <th class="text-center">State</th>
+            <th class="text-center">&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of filterUser">
+            <td>{{ user.id }}</td>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.adress }}</td>
+            <td>{{ user.state }}</td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-info btn-sm mr-2"
+                (click)="showEditUserForm(user)"
+              >
+                Edit
+              </button>
+
+              <button
+                type="button"
+                class="btn btn-danger btn-sm"
+                (click)="removeUser(user)"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-success" (click)="showAddUserForm()">
+        Add New User
+      </button>
+
+      <div class="mt-4">
+        <form *ngIf="userForm">
+          <h2>Add New User</h2>
+          <div class="form-group">
+            <form class="form" #registerForm="ngForm"></form>
+          </div>
+
+          <p>
+            First Name:
+            <input
+              type="text"
+              name="firstName"
+              class="form-control"
+              [(ngModel)]="newUser.firstName"
+              #name="ngModel"
+              required
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                (name.touched || registerForm.submitted) &&
+                name.errors?.required
+              "
+            >
+              Name is required
+            </span>
+          </p>
+          <div class="form-group">
+            <form class="form" #registerForm="ngForm"></form>
+          </div>
+          <p>
+            Last Name:
+            <input
+              type="text"
+              name="lastName"
+              class="form-control"
+              [(ngModel)]="newUser.lastName"
+              #name="ngModel"
+              required
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                (name.touched || registerForm.submitted) &&
+                name.errors?.required
+              "
+            >
+              Name is required
+            </span>
+          </p>
+          <p>
+            Adress:
+            <input
+              type="text"
+              name="adress"
+              class="form-control"
+              [(ngModel)]="newUser.adress"
+              #name="ngModel"
+              required
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                (name.touched || registerForm.submitted) &&
+                name.errors?.required
+              "
+            >
+              adress is required
+            </span>
+          </p>
+          <div class="form-group">
+            <form class="form" #registerForm="ngForm"></form>
+          </div>
+          <p>
+            Email:
+            <input
+              type="text"
+              name="email"
+              class="form-control"
+              [(ngModel)]="newUser.email"
+              #name="ngModel"
+              required
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                (name.touched || registerForm.submitted) &&
+                name.errors?.required
+              "
+            >
+              email is required
+            </span>
+          </p>
+
+          <p>
+            State:<select name="state" [(ngModel)]="newUser.state">
+              <option>choose state</option>
+              <option *ngFor="let state of states" [value]="state.name">
+                {{ state.name }}
+              </option>
+            </select>
+          </p>
+
+          <p>
+            <button
+              type="button"
+              class="btn btn-primary mr-2"
+              (click)="saveUser(newUser)"
+            >
+              Submit
+            </button>
+            <button
+              type="button"
+              class="btn btn-warning"
+              (click)="cancelNewUser()"
+            >
+              Cancel
+            </button>
+          </p>
+        </form>
+
+        <form *ngIf="editUserForm">
+          <h2>Edit User Details</h2>
+          <div class="form-group">
+            <form class="form" #registerForm="ngForm"></form>
+          </div>
+
+          <p>
+            First Name:
+            <input
+              type="text"
+              name="firstName"
+              class="form-control"
+              [(ngModel)]="editedUser.firstName"
+              #name="ngModel"
+              required
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                (name.touched || registerForm.submitted) &&
+                name.errors?.required
+              "
+            >
+              Name is required
+            </span>
+          </p>
+          <div class="form-group">
+            <form class="form" #registerForm="ngForm"></form>
+          </div>
+          <p>
+            Last Name:
+            <input
+              type="text"
+              name="lastName"
+              class="form-control"
+              [(ngModel)]="editedUser.lastName"
+              #name="ngModel"
+              required
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                (name.touched || registerForm.submitted) &&
+                name.errors?.required
+              "
+            >
+              Name is required
+            </span>
+          </p>
+          <p>
+            Adress:
+            <input
+              type="text"
+              name="adress"
+              class="form-control"
+              [(ngModel)]="editedUser.adress"
+              #name="ngModel"
+              required
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                (name.touched || registerForm.submitted) &&
+                name.errors?.required
+              "
+            >
+              adress is required
+            </span>
+          </p>
+          <div class="form-group">
+            <form class="form" #registerForm="ngForm"></form>
+          </div>
+          <p>
+            Email:
+            <input
+              type="text"
+              name="email"
+              class="form-control"
+              [(ngModel)]="editedUser.email"
+              #name="ngModel"
+              required
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                (name.touched || registerForm.submitted) &&
+                name.errors?.required
+              "
+            >
+              email is required
+            </span>
+          </p>
+
+          <p>
+            State:<select name="state" [(ngModel)]="editedUser.state">
+              <option>choose state</option>
+              <option *ngFor="let state of states" [value]="state.name">
+                {{ state.name }}
+              </option>
+            </select>
+          </p>
+          <p>
+            <button
+              type="button"
+              class="btn btn-primary mr-2"
+              (click)="updateUser()"
+            >
+              Submit
+            </button>
+            <button
+              type="button"
+              class="btn btn-warning"
+              (click)="cancelEdits()"
+            >
+              Cancel
+            </button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
