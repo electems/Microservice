@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12 mt-4">
+        <h1 class="text-center">STUDENT LIST</h1>
+        <div class="filter-wrap">
+        <input [(ngModel)]="searchTerm" placeholder="Filter Users Based on First Name" class="filter-input">
+    </div>
+        <table class="table table-bordered table-striped table-hover">
+          <thead>
+            <tr>
+              
+              <th class="text-center">First Name</th>
+              <th class="text-center">Address</th>
+              <th class="text-center">Phoneno</th>
+              <th class="text-center">course</th>
+              <th class="text-center">&nbsp;</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of filterUser">
+              <td>{{ user.firstName }}</td>
+              <td>{{ user.Address }}</td>
+              <td>{{ user.Phoneno }}</td>
+              <td>{{ user.course }}</td>
+              <td>
+                <button type="button" class="btn btn-info btn-sm mr-2" (click)="showEditUserForm(user)">Edit</button>
+  
+                <button type="button" class="btn btn-danger btn-sm" (click)="removeUser(user)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="btn btn-success" (click)="showAddUserForm()">Add New User</button>
+  
+        <div class="mt-4">
+          <form *ngIf="userForm">
+            <h2>Add New User</h2>
+          <div class=" form-group"> 
+          <form class="form" #registerForm="ngForm"></form> 
+          </div> 
+          <p>First Name: <input type="text" name="firstName"  [(ngModel)]="newUser.firstName" #name="ngModel" required /> 
+          <span class="text-danger" 
+          *ngIf="(name.touched || registerForm.submitted) && name.errors?.required">  FirstName is required </span> 
+          </p>
+           <p>Address: <input type="text" name="lastName" [(ngModel)]="newUser.address" #name="ngModel" required/>
+              <span class="text-danger" 
+              *ngIf="(name.touched || registerForm.submitted) && name.errors?.required">  address is required </span> </p>
+            <p>Phoneno: <input type="number" name="Phoneno" [(ngModel)]="newUser.Phoneno" #name="ngModel" required />
+                <span class="text-danger" 
+              *ngIf="(name.touched || registerForm.submitted) && name.errors?.required">  Phoneno is required </span> </p> -->
+            <p>course :<input type="text" name="course" [(ngModel)]="newUser.course" #name="ngModel" required/>
+                <span class="text-danger"  *ngIf="(name.touched || registerForm.submitted) && name.errors?.required">  course is required </span> </p>
+            <p>
+              <button type="button" id="SubmitNewform" class="btn btn-primary mr-2" (click)="saveUser(newUser)">Submit</button>
+              <button type="button" class="btn btn-warning" (click)="cancelNewUser()">Cancel</button>
+            </p>
+          </form>
+  
+          <!-- <form *ngIf="editUserForm">
+            <h2>Edit User Details</h2>
+            <p>First Name: <input type="text" name="firstName"  [(ngModel)]="newUser.firstName" #name="ngModel" required /> 
+                <span class="text-danger" 
+                *ngIf="(name.touched || registerForm.submitted) && name.errors?.required">  FirstName is required </span> 
+                </p>
+                <p>Address: <input type="text" name="lastName" [(ngModel)]="newUser.address" #name="ngModel" required/>
+                    <span class="text-danger" 
+                    *ngIf="(name.touched || registerForm.submitted) && name.errors?.required">  address is required </span> </p>
+                    <p>Phoneno: <input type="number" name="Phoneno" [(ngModel)]="newUser.Phoneno" #name="ngModel" required />
+                        <span class="text-danger" 
+                      *ngIf="(name.touched || registerForm.submitted) && name.errors?.required">  Phoneno is required </span> </p>
+            
+            <p>
+              <button type="button" id="SubmitEditform" class="btn btn-primary mr-2" (click)="updateUser()">Submit</button>
+              <button type="button" class="btn btn-warning" (click)="cancelEdits()">Cancel</button>
+          
+          </form> -->
+        </div>
+      </div>
+     
+  </div>
+  
