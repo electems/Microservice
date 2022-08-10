@@ -9,11 +9,17 @@ const baseUrl = 'http://localhost:8000/tutorial';
   providedIn: 'root',
 })
 export class TutorialService {
+  baseUrl = 'http://localhost:8000/tutorial';
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<Tutorial[]> {
-    return this.http.get<Tutorial[]>(baseUrl);
+  getAll() {
+    return this.http.get(this.baseUrl).toPromise();
   }
+
+  // getAll(): Observable<Tutorial[]> {
+  //   return this.http.get<Tutorial[]>(baseUrl);
+  // }
+
 
   get(id: any): Observable<Tutorial> {
     return this.http.get(`${baseUrl}/${id}`);
