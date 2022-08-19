@@ -1,0 +1,15 @@
+<br>  <br>  
+
+<h2>main.component </h2>
+
+<input type="text" [(ngModel)]="childTitle"> 
+
+<h3>Click count: {{clickCount}} </h3>  
+
+<h3>Child name: {{name}} </h3>  
+
+
+<app-child [title]="childTitle" (onChanged)="onCountChanged($event)"
+[(childName)]="name">
+</app-child>
+
