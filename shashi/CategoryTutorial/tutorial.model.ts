@@ -5,4 +5,5 @@ export class Tutorial {
   title?: string;
   description?: string;
   categories?: Category[];
+  author?:string;
 }

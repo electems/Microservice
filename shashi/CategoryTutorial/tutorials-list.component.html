@@ -24,7 +24,7 @@
           [class.active]="i == currentIndex"
           (click)="setActiveTutorial(tutorial, i)"
         >
-          {{ tutorial.title }}
+          {{ tutorial.title }} {{ tutorial.categories | json }}
         </li>
         
       </ul>
@@ -38,6 +38,10 @@
         <div>
           <label><strong>Description:</strong></label>
           {{ currentTutorial.description }}
+        </div>
+        <div>
+          <label><strong>Categories:</strong></label>
+          {{ currentTutorial.categories | json }}
         </div>
   
         <a class="btn btn-info btn-sm mr-2" routerLink="/tutorials/{{ currentTutorial.id }}">
