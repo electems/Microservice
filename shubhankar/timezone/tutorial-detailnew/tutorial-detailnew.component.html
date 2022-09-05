@@ -1,0 +1,23 @@
+<span></span>
+<div class="col-md-6">
+    <div *ngIf="currentTutorial.id">
+      <h4>Tutorial</h4>
+      
+        <label><strong>Title:</strong></label>
+        {{ currentTutorial.title }}
+     
+        <label><strong>Description:</strong></label>
+        {{ currentTutorial.description }}
+     
+        <label><strong>CATEGORY:</strong></label>
+        {{ currentTutorial.categories | json }}
+      
+        <label><strong>timeZone:</strong></label>
+        {{ currentTutorial.timezone }}
+      
+        <label><strong>Created At:</strong></label>
+        {{ currentTutorial.createdAt }}
+
+        <label><strong>Conversion:</strong></label>
+        {{currentTutorial.createdAt | date:'full'}}
+      
