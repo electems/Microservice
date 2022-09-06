@@ -1,0 +1,27 @@
+
+<br>{{tutorialId}}<br>
+<br>
+<label>content</label>
+<input type="text" id="content" class="form-control" placeholder="content" [(ngModel)]="comment.content"/>
+<button  class="btn btn-success" (click)="saveComment()">Submit</button>
+<div *ngIf="submitted">
+    <h4>content was submitted successfully!</h4>
+</div>
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">content</th>
+        <th scope="col">createdatet</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let comment of commentDetails; let i = index">
+      <tr>
+        <th scope="row">{{comment.id}}</th>
+        <th scope="row">{{comment.content}}</th>
+        <th scope="row">{{comment.createdat}}</th>
+      </tr>
+    </tbody>
+  </table>
