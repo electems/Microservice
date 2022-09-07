@@ -1,0 +1,28 @@
+<div class="form-group">
+    <label for="content">Comment info :</label>
+    <input
+      type="content"
+      class="form-control"
+      id="content"
+      required
+      name="content"
+      [(ngModel)]="currentComment.content"
+     />
+  <button  (click)="saveComment()"  class="btn btn-success"  >Save</button>
+  </div>
+  <table class="table" >
+    <thead>
+      <tr>
+        <th class="text-center">Id</th>
+        <th class="text-center">Description</th>
+        <th class="text-center">tutorialId</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let comment of comments">
+         <td>{{ comment.id }}</td>
+         <td>{{ comment.content }}</td>
+         <td>{{comment.tutorialId}}</td>
+    </tr>          
+   </tbody>
+</table>
