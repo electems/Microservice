@@ -9,4 +9,5 @@
   <label><strong>Conversion:</strong></label
   >{{ tutorial.createdAt | date: "full":tutorial.timeZone }}
 </div>
-<app-comment-post [tutorialId]="tutorialId"></app-comment-post>
+<app-comment-post [tutorialId]="tutorialId" [timeZone]="timeZone"></app-comment-post>
+<button class="btn btn-outline-success  btn-sm"  routerLink="/tutorials" >Back</button>

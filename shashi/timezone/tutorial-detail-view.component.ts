@@ -17,6 +17,7 @@ export class TutorialDetialViewComponent implements OnInit {
     categories: [],
   };
   tutorialId?: number;
+  timeZone?: String; //change
   selectedCategory = new Category();
   constructor(
     private route: ActivatedRoute,
@@ -29,6 +30,7 @@ export class TutorialDetialViewComponent implements OnInit {
   async getTutorial(id: Number) {
     const data = await this.tutorialService.getTutorial(id);
     this.tutorial = data;
+    this.timeZone = this.tutorial.timeZone;
     if (data.categories) {
       this.selectedCategory = data.categories[0];
     }
